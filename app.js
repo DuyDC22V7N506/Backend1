@@ -12,7 +12,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to contact book application." });
 });
 app.use("/api/contacts", contactsRouter);
-app.use((req, res, next) => {
   // handle 404 response
 app.use((req, res, next) => {
 // Code ở đây sẽ chạy khi không có route được định nghĩa nào
@@ -27,5 +26,7 @@ return res.status(error.statusCode || 500).json({
 message: error.message || "Internal Server Error",
 });
 });
-});
+
+
+
 module.exports = app;
